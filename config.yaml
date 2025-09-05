@@ -1,0 +1,48 @@
+whisper:
+  # Default implementation is faster-whisper. This indicates model name within model cache
+  model_size: large-v3-turbo
+  # Compute type. 'float16' for CUDA, 'float32' for CPU.
+  compute_type: float32
+  # Whether to offload the model after the inference.
+  enable_offload: true
+
+audio:
+  # Audio device (auto-detected if not specified)
+  # device: "alsa_input.usb-SteelSeries_Arctis_Nova_7-00.mono-fallback"
+  # Sample rate (48000 recommended for most devices)
+  sample_rate: 48000
+  # Audio format
+  format: s16le
+  # Channels (1 for mono, 2 for stereo - mono recommended for speech)
+  channels: 1
+  # Recording delay after stop command (seconds)
+  stop_delay: 2
+
+transcription:
+  # Maximum text length before truncation
+  max_length: 1000
+  # Enable hallucination detection and cleanup
+  enable_cleanup: true
+  # Language (auto-detect if not specified)
+  # language: "en"
+
+system:
+  # Paths for temporary files
+  temp_dir: "/tmp"
+  # Socket path for client-server communication
+  socket_path: "/tmp/whisper_transcription.sock"
+  # PID file for server management
+  pid_file: "/tmp/whisper_server.pid"
+  # Log files
+  server_log: "/tmp/whisper_server.log"
+  transcription_log: "/tmp/whisper_transcription.log"
+  status_file: "/tmp/whisper_status.json"
+
+# Advanced settings (modify with caution)
+advanced:
+  # Timeout for transcription requests (seconds)
+  transcription_timeout: 60
+  # Socket timeout (seconds)
+  socket_timeout: 5
+  # Model loading timeout (seconds)
+  model_timeout: 120

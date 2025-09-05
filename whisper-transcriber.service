@@ -1,0 +1,16 @@
+[Unit]
+Description=Whisper Background Transcription Server
+After=graphical-session.target
+
+[Service]
+Type=simple
+User=%i
+Environment=HOME=%h
+Environment=PYTHONPATH=/home/markm/wrighter/Whisper-WebUI
+ExecStart=/home/markm/wrighter/Whisper-WebUI/start_transcription_server.sh start
+ExecStop=/home/markm/wrighter/Whisper-WebUI/start_transcription_server.sh stop
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
