@@ -2,15 +2,14 @@
 faster-whisper>=1.0.0
 torch>=2.0.0
 numpy>=1.21.0
-pydantic>=2.0.0
+PyYAML>=6.0.0
 
 # Audio processing
 soundfile>=0.12.0
-librosa>=0.10.0
 
-# Optional: GPU acceleration
-# torch-audio  # Uncomment for additional audio format support
-# onnxruntime-gpu  # Uncomment for ONNX GPU acceleration
+# Optional: GPU acceleration (uncomment if you have NVIDIA GPU)
+# torch-audio  # Additional audio format support
+# onnxruntime-gpu  # ONNX GPU acceleration
 
 # Development dependencies (optional)
 # pytest>=7.0.0

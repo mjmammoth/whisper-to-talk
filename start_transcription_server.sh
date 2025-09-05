@@ -19,17 +19,17 @@ run_with_venv() {
 case "${1:-start}" in
     "start")
         echo "Starting Whisper transcription server..."
-        run_with_venv transcription_server.py
+        run_with_venv transcription_server_standalone.py
         ;;
     "stop")
         echo "Stopping Whisper transcription server..."
-        run_with_venv transcription_server.py stop
+        run_with_venv transcription_server_standalone.py stop
         ;;
     "restart")
         echo "Restarting Whisper transcription server..."
-        run_with_venv transcription_server.py stop
+        run_with_venv transcription_server_standalone.py stop
         sleep 2
-        run_with_venv transcription_server.py
+        run_with_venv transcription_server_standalone.py
         ;;
     "status")
         if [ -f "/tmp/whisper_server.pid" ]; then

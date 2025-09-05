@@ -1,6 +1,8 @@
 whisper:
   # Default implementation is faster-whisper. This indicates model name within model cache
-  model_size: large-v3-turbo
+  # Models by speed (fastest to slowest): tiny, base, small, medium, large-v3-turbo, large-v3
+  # For CPU-only systems, consider: base (good balance), small (faster), or tiny (fastest)
+  model_size: base
   # Compute type. 'float16' for CUDA, 'float32' for CPU.
   compute_type: float32
   # Whether to offload the model after the inference.
