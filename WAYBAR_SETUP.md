@@ -26,13 +26,15 @@ This document explains how to integrate the Whisper-to-Talk transcription system
 
 ### 1. Add Module to Waybar Config
 
-Edit your Waybar configuration file (usually `~/.config/waybar/config`) and add the whisper-transcriber module to your modules list:
+Edit your Waybar configuration file (usually `~/.config/waybar/config`) and add the whisper-transcriber module to your modules list.
+
+**Recommended Position**: Place it as a free-floating icon outside grouped sections for best visual consistency:
 
 ```json
 {
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["whisper-transcriber", "pulseaudio", "network", "battery"],
+    "modules-right": ["custom/padd", "whisper-transcriber", "custom/padd", "custom/l_end", "pulseaudio", "network", "battery", "custom/r_end"],
     
     "whisper-transcriber": {
         "exec": "/home/markm/whisper-to-talk/waybar_status.py",
