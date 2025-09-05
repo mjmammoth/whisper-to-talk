@@ -1,0 +1,19 @@
+{
+    "whisper-transcriber": {
+        "exec": "/home/markm/whisper-to-talk/waybar_status.py",
+        "return-type": "json",
+        "interval": 2,
+        "signal": 8,
+        "on-click": "/home/markm/whisper-to-talk/waybar_status.py 1",
+        "on-click-right": "/home/markm/whisper-to-talk/waybar_status.py 3",
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+            "idle": "🎤",
+            "recording": "🔴", 
+            "processing": "⚡",
+            "offline": "🎤",
+            "error": "❌"
+        }
+    }
+}
